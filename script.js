@@ -1,7 +1,31 @@
 console.log("javascript carregado"); 
 
-function validaCPF(cpf){ //   essa função ffoi criada para saber se o cpf é verdadeiro falso, 
-	return false; // esse resultado esta sendo manipulado só para retornar  o resultado da funcao da lianha 14
+function validaCPF(cpf){ //   essa função foi criada para saber se o cpf é verdadeiro falso, 
+	
+	if (cpf.length != 11) {
+		return false;
+	}
+	else {
+		var numeros = cpf.substring(0,9); //a posiçao do cpf começa a partir do zero e termina na posição 8  {exemplo do cpf}  37142811854
+		var digitos = cpf.substring(9); // a posiçao do restante do cpf a partir da posição 9;               {posiçao do cpf}  0123456789
+
+
+		var soma = 0; // variavel de incremento
+		for (var i = 10; i > 1; i--) {
+			soma += numeros.charAt(10 - i) * i; // a funcao charAt me retorna a posicao daquela strig na lista
+		}
+		console.log(soma);
+
+		// validação do meu primeiro digito
+		var resultado = (soma % 11) < 2 ? 0 : 11 - (soma % 11);
+
+		if (resultado != digitos.charAt(0)) {
+			return false;
+		}
+
+
+	return true;
+	}
 }
 
 
