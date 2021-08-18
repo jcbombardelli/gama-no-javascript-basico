@@ -34,18 +34,23 @@
             <div class="form-group">
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon" id="sizing-addon1">CPF</span>
+                    <!--Usar o id mostrar pro html que ele tem um identificador nesse componente-->
                     <input type="text" class="form-control" placeholder="Digite o cpf para validação ..."
-                        aria-describedby="sizing-addon1">
+                        aria-describedby="sizing-addon1" id="cpf_digitado">
                 </div>
                 <small class="form-text text-muted">Digite somente numeros</small>
             </div>
-            <button type="button" class="btn btn-info">Validar !</button>
+            <!--Criar evento onclick para chamar a função de validação-->
+            <button type="button" class="btn btn-info" onclick="validacao()">Validar !</button>
         </form>
     </div>
     <div class="container page-header">
+        <!--Alertas associados a função validacao()-->
+        <!--Se validar o cpf-->
         <div id="success" class="alert alert-success" style="display: none;" role="alert">
             <strong>Oba!</strong> Seu CPF é válido
         </div>
+         <!--Se não validar o cpf-->
         <div id="error" class="alert alert-danger" style="display: none;" role="alert">
             <strong>Ops!</strong> Seu CPF não é válido
         </div>
@@ -60,6 +65,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"></script>
 
-
+<!--Conectar o html ao JavaScript-->
+<script src="./script.js"></script>
 
 </html>
